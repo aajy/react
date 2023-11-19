@@ -1,9 +1,13 @@
 function News() {
+	const fontStyle = {
+		color: 'aqua',
+		fontSize: 60,
+	};
 	return (
 		<article>
-			<h2>News</h2>
+			<h2 style={{ color: 'orange', fonSize: 50 }}>News</h2>
 			<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint, recusandae.</p>
-			<a href='#'>view detail</a>
+			<p style={fontStyle}>view detail</p>
 		</article>
 	);
 }

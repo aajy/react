@@ -1,10 +1,14 @@
-import Article from './Article';
+import News from './News';
+// import './scss/style.scss';
 
 function App() {
 	return (
 		<>
 			<h1>jsx</h1>
-			<Article />
+			<News />
+			<News />
+			<News />
+			<News />
 		</>
 	);
 }

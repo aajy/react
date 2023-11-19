@@ -1,8 +1,11 @@
+import Article from './Article';
+
 function App() {
 	return (
-		<div className='App'>
-			<h1>React Template</h1>
-		</div>
+		<>
+			<h1>jsx</h1>
+			<Article />
+		</>
 	);
 }
 

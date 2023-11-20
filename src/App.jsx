@@ -1,14 +1,22 @@
-import Btn from './Btn';
-import Title from './Title';
-import Sub from './sub/Sub';
+import Footer from './components/common/Footer';
+import Header from './components/common/Header';
+import Visual from './components/main/Visual';
+import News from './components/sub/News';
+import '../src/scss/style.scss';
 
 function App() {
 	return (
-		<div className='App'>
-			<Title />
-			<Btn />
-			<Sub />
-		</div>
+		<>
+			<Header />
+			<Visual />
+			<section>
+				<News />
+				<News />
+				<News />
+				<News />
+			</section>
+			<Footer />
+		</>
 	);
 }
 

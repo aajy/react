@@ -6,6 +6,7 @@ import '../src/scss/style.scss';
 
 function App() {
 	const colors = ['red', 'orange', 'yellow', 'lightgreen', 'cornflowerblue'];
+	let isPop = true;
 	return (
 		<>
 			<Header />
@@ -18,6 +19,8 @@ function App() {
 					})}
 				</div>
 			</section>
+			{/* {isPop ? <aside className='modal'>레이어 팝업</aside> : null} */}
+			{isPop && <aside className='modal'>레이어 팝업</aside>}
 			<Footer />
 		</>
 	);

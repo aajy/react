@@ -5,10 +5,17 @@ import News from './components/sub/News';
 import '../src/scss/style.scss';
 
 function App() {
+	const fontStyle = {
+		color: 'aqua',
+		fontSize: 60,
+		fontWeight: 'normal',
+	};
 	return (
 		<>
 			<Header />
 			<Visual />
+			<h1 style={{ color: 'orange', fontSize: 50 }}>News</h1>
+			<h1 style={fontStyle}>News</h1>
 			<section>
 				<News />
 				<News />

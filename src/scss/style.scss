@@ -1,30 +1,28 @@
 @import 'reset';
 
-body {
-	padding: 100px 30px;
-}
-h1 {
-	font: bold 50px/1 'arial';
-	color: #333;
-	margin-bottom: 40px;
-}
+.wrap {
+	background: #333;
+	width: 100vw;
+	height: 100vh;
+	padding: 100px 20px;
 
-section {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-content: flex-start;
-
-	article {
-		padding: 30px;
-		background-color: #fff;
-		border: 1px solid #eee;
-		border-radius: 6px;
-		box-shadow: 5px 5px 10px #00000015;
-		cursor: pointer;
-		transition: 0.5s;
-		&:hover {
-			background-color: #eee;
+	.top {
+		width: 100%;
+		height: 70%;
+		background: #fafafa;
+		padding: 60px 30px;
+		display: flex;
+		align-items: center;
+		gap: 90px;
+		h1 {
+			border-top: 2px solid #333;
+			padding-top: 10px;
+			font-size: 1.4rem;
 		}
+	}
+	.CardBox {
+		padding: 0 10px 0 70px;
+		display: flex;
+		justify-content: space-between;
 	}
 }

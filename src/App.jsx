@@ -1,29 +1,15 @@
-import Footer from './components/common/Footer';
-import Header from './components/common/Header';
-import Visual from './components/main/Visual';
-import News from './components/sub/News';
-import '../src/scss/style.scss';
-
-function App() {
-	const colors = ['red', 'orange', 'yellow', 'lightgreen', 'cornflowerblue'];
-	let isPop = true;
+export default function App() {
+	const name = '홍길뚱';
+	const cl_name = 'wrap';
+	const changeButton = (e, txt) => {
+		e.target.innerText = txt;
+	};
 	return (
 		<>
-			<Header />
-			<Visual />
-			<h1 style={{ color: 'orange', fontSize: 50 }}>News</h1>
-			<section>
-				<div>
-					{colors.map((color, idx) => {
-						return <News color={color} />;
-					})}
-				</div>
+			<section className={cl_name}>
+				<h1>안녕하세요. 제 이름은 {name} 입니다.</h1>
+				<button onClick={(e) => changeButton(e, '버튼이름')}>이름 변경</button>
 			</section>
-			{/* {isPop ? <aside className='modal'>레이어 팝업</aside> : null} */}
-			{isPop && <aside className='modal'>레이어 팝업</aside>}
-			<Footer />
 		</>
 	);
 }
-
-export default App;

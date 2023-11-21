@@ -1,14 +1,14 @@
 import './Card.scss';
-export default function Card(props) {
+export default function Card({ colorName, index, width, istxtVisible }) {
 	const style = {
-		width: props.width,
+		width: width,
 	};
 	return (
 		<article className='Card ' style={style}>
-			<div className='bgBox' style={{ backgroundColor: props.colorName }}></div>
-			{props.istxtVisible && (
+			<div className='bgBox' style={{ backgroundColor: colorName }}></div>
+			{istxtVisible && (
 				<div className='txtBox'>
-					{props.index + 1}-{props.colorName}
+					{index + 1}-{colorName}
 				</div>
 			)}
 		</article>

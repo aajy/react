@@ -1,4 +1,8 @@
 import './Modal.scss';
-export default function Modal() {
-	return <div className='Modal'>Modal</div>;
+export default function Modal({ color }) {
+	return (
+		<div className='Modal' style={{ backgroundColor: color }}>
+			Modal
+		</div>
+	);
 }

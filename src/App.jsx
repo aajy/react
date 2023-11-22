@@ -1,16 +1,13 @@
+import { useState } from 'react';
 import Modal from './modal/Modal';
 
 export default function App() {
-	console.log('App re-rendered');
-	let IsOpen = false;
-	const handleModal = () => {
-		console.log('handlemodal called');
-		IsOpen = true;
-	};
+	const [IsOpen, setIsOpen] = useState();
+
 	return (
 		<>
 			<h1>부모 컴포넌트</h1>
-			<button onClick={handleModal}>modal {IsOpen ? 'close' : 'open'}</button>
+			<button onClick={() => setIsOpen(!IsOpen)}>{IsOpen ? '모달 닫기' : '모달 열기'}</button>
 			{IsOpen && <Modal />}
 		</>
 	);

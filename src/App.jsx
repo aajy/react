@@ -1,24 +1,20 @@
-import { useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.scss';
 export default function App() {
-	console.log('render');
-	const box = useRef(null);
-	const deg = useRef(45);
-	const [Index, setIndex] = useState(0);
-	const handleLeft = () => {
-		setIndex(Index - 1);
-		box.current.style.transform = `rotate(${deg.current * Index}deg)`;
-	};
-	const handleRight = () => {
-		setIndex(Index + 1);
-		box.current.style.transform = `rotate(${deg.current * Index}deg)`;
-	};
+	const [Num, setNum] = useState(0);
+	//의존성 배열 미등록시 컴포넌트가 재랜더링 될때 계속 호출
+	useEffect(() => {
+		console.log('tests');
+	});
+	//의존성 배열을 비워두면 컴포넌트가 초기 마운트 될때 한번만 실행
+	useEffect(() => {
+		console.log('tests');
+	}, []);
 	return (
 		<>
 			<div className='wrap'>
-				<button onClick={handleLeft}>left</button>
-				<button onClick={handleRight}>right</button>
-				<div className='box' ref={box}></div>
+				<button onClick={() => setNum(Num + 1)}>change NUmber</button>
+				<h1>{Num}</h1>
 			</div>
 		</>
 	);

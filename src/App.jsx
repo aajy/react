@@ -1,15 +1,28 @@
-import { useState } from 'react';
-import Modal from './modal/Modal';
+import { useRef } from 'react';
 import './App.scss';
-
 export default function App() {
-	const [Open, setOpen] = useState(false);
+	console.log('render');
+	const num = useRef(0);
+	const refBox = useRef(null);
 
+	const minus = () => {
+		num.current--;
+		refBox.current.style.transform = `rotate(${num.current * 45}deg)`;
+		console.log('minus', num.current);
+	};
+	const plus = () => {
+		num.current++;
+		refBox.current.style.transform = `rotate(${num.current * 45}deg)`;
+		console.log('plus', num.current);
+	};
 	return (
 		<>
-			<h1>Parent</h1>
-			<button onClick={() => setOpen(true)}>open</button>
-			{Open && <Modal getOpen={setOpen} />}
+			<button onClick={minus}>left</button>
+			<button onClick={plus}>right</button>
+
+			<div className='box' ref={refBox}>
+				{num.current}
+			</div>
 		</>
 	);
 }

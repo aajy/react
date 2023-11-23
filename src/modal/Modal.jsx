@@ -1,19 +1,20 @@
-import { useState } from 'react';
 import './Modal.scss';
 import { useEffect } from 'react';
 
 export default function Modal({ getOpen }) {
-	const [Num, setNum] = useState(0);
 	useEffect(() => {
-		console.log('mounted');
+		document.body.style.overflow = 'hidden';
+		return () => {
+			document.body.style.overflow = 'auto';
+		};
 	}, []);
 
 	return (
-		<aside className='Modal'>
-			<button onClick={() => setNum(Num - 1)}>minus</button>
-			<button onClick={() => setNum(Num + 1)}>plus</button>
-			<button onClick={() => getOpen(false)}>close</button>
-			<h1>Modal{Num}</h1>
-		</aside>
+		<>
+			<aside className='mask'></aside>
+			<aside className='Modal'>
+				<button onClick={() => getOpen(false)}>close</button>
+			</aside>
+		</>
 	);
 }

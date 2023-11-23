@@ -1,28 +1,18 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import './App.scss';
 export default function App() {
 	console.log('render');
-	const num = useRef(0);
-	const refBox = useRef(null);
-
-	const minus = () => {
-		num.current--;
-		refBox.current.style.transform = `rotate(${num.current * 45}deg)`;
-		console.log('minus', num.current);
-	};
-	const plus = () => {
-		num.current++;
-		refBox.current.style.transform = `rotate(${num.current * 45}deg)`;
-		console.log('plus', num.current);
+	const [Num2, setNum2] = useState(0);
+	let num1 = useRef(0);
+	const handleClick = () => {
+		num1.current++;
+		setNum2(Num2 + 1);
+		console.log('num1', num1.current);
+		console.log('num2', Num2);
 	};
 	return (
 		<>
-			<button onClick={minus}>left</button>
-			<button onClick={plus}>right</button>
-
-			<div className='box' ref={refBox}>
-				{num.current}
-			</div>
+			<button onClick={handleClick}>버튼</button>
 		</>
 	);
 }

@@ -12,10 +12,10 @@ useEffect(()=>{
 	return (
 		<div className="wrap">
 			{ Members.map((el, index)=>{
-				return <div className='box' style={{borderColor:`${colors[index]}`}}>
-				<span>{el.pic}</span>
+				return <div className='box' style={{borderColor:`${colors[index]}`, color:`${colors[index]}`,}}>
+				<span style={{backgroundColor:`${colors[index]}`, borderColor:`${colors[index]}`}}></span>
 				<div className='boxRight'>
-					<span>{el.name}</span>
+					<span style={{borderColor:`${colors[index]}`}}>{el.name}</span>
 					<span>{el.position}</span>
 				</div>
 			</div>

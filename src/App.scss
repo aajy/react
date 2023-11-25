@@ -12,7 +12,7 @@
 	flex-direction: column;
 	padding: 0 200px;
 	.box {
-		border:1px solid #444;
+		border:3px solid #444;
 		width:300px;
 		height:180px;
 		margin-bottom: 20px;
@@ -22,7 +22,7 @@
 		>span {
 			flex: 1;
 			display: block;
-			border-right:1px solid #444;
+			border-right:3px solid #444;
 			height: 100%;
 		}
 		.boxRight {
@@ -33,7 +33,7 @@
 				flex: 1;
 				&:nth-child(1) {
 					display: block;
-					border-bottom:1px solid #444;
+					border-bottom:3px solid #444;
 					height: 100%;
 				}
 			}

@@ -7,7 +7,11 @@ export default function App() {
 	const colors =['red','orangered', 'orange','lightgoldenrodyellow','yellowgreen','cornflowerblue']
 
 	const filter = (e) => {
-		console.log(e.target.innerText);
+		const arr = [...Members];
+		const name = e.target.innerText;
+		const member = arr.filter(el=>el.name===name);
+		console.log('member: ', member);
+		setMembers(member);
 	}
 useEffect(()=>{
 	setMembers(data.members);

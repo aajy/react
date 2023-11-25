@@ -11,10 +11,12 @@ useEffect(()=>{
 	return (
 		<div className="wrap">
 			{ Members.map((el, index)=>{
-				return <div>
-				<span>{el.name}</span>
-				<span>{el.position}</span>
+				return <div className='box'>
 				<span>{el.pic}</span>
+				<div className='boxRight'>
+					<span>{el.name}</span>
+					<span>{el.position}</span>
+				</div>
 			</div>
 })}
 		</div>

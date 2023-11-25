@@ -19,6 +19,7 @@ useEffect(()=>{
 },[]);
 	return (
 		<div className="wrap">
+			<span>{Members.length}</span>
 			<div className='filter'>
 				<button onClick={(e)=>filter(e)}>David</button>
 				<button onClick={(e)=>filter(e)}>Emily</button>

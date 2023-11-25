@@ -7,7 +7,7 @@ export default function App() {
 	const colors =['red','orangered', 'orange','lightgoldenrodyellow','yellowgreen','cornflowerblue']
 
 	const filter = (e) => {
-		const arr = [...Members];
+		const arr = data.members;
 		const name = e.target.innerText;
 		const member = arr.filter(el=>el.name===name);
 		console.log('member: ', member);

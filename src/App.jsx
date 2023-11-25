@@ -1,16 +1,22 @@
 import './App.scss';
-import members from '../src/DB/department.json';
+import data from '../src/DB/department.json';
 import { useEffect,useState } from 'react';
 
 export default function App() {
 	const [Members,setMembers] = useState([]);
 useEffect(()=>{
-	console.log(members);
-	setMembers(members);
+	setMembers(data.members);
+	console.log(data);
 },[]);
 	return (
 		<div className="wrap">
-			<div>{}</div>
+			{ Members.map((el, index)=>{
+				return <div>
+				<span>{el.name}</span>
+				<span>{el.position}</span>
+				<span>{el.pic}</span>
+			</div>
+})}
 		</div>
 	);
 }

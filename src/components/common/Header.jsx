@@ -1,6 +1,7 @@
 import { useContext, useMemo, useEffect, useState } from 'react';
 import { AgeContext } from './AgeContext';
 import { NameContext } from './NameContext';
+import { useRef } from 'react';
 
 export default function Header() {
 	const age = useContext(AgeContext);
@@ -8,17 +9,22 @@ export default function Header() {
 	const [number, setNumber] = useState(0);
 	const [isKorea, setIsKorea] = useState(true);
 	const [Weather, setWeather] = useState('');
+	const color = useRef('');
 	// const location = { country: isKorea ? '한국' : '일본' };
 	const location = useMemo(() => {
 		return {
 			country: isKorea ? '한국' : '일본',
 		};
 	}, [isKorea]);
+	const checkColor = () => {
+		console.log('color', color.current.value);
+	};
 
 	useEffect(() => {
 		console.log('useEffect... 호출');
 		// 뭔가 오래 걸리는 작업
 	}, [location]);
+
 	return (
 		<header>
 			<p>
@@ -40,6 +46,9 @@ export default function Header() {
 				value={Weather}
 				onChange={(e) => setWeather(e.target.value)}
 			/>
+			<h2>좋아하는 색이이 무엇인가요?</h2>
+			<input type='text' ref={color} />
+			<button onClick={checkColor}>color확인</button>
 		</header>
 	);
 }

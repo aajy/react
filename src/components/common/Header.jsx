@@ -5,9 +5,9 @@ import { NameContext } from './NameContext';
 export default function Header() {
 	const age = useContext(AgeContext);
 	const user = useContext(NameContext);
-
 	const [number, setNumber] = useState(0);
 	const [isKorea, setIsKorea] = useState(true);
+	const [Weather, setWeather] = useState('');
 	// const location = { country: isKorea ? '한국' : '일본' };
 	const location = useMemo(() => {
 		return {
@@ -34,6 +34,12 @@ export default function Header() {
 			<h2>어느 나라에 있어요?</h2>
 			<p>나라: {location.country}</p>
 			<button onClick={() => setIsKorea(!isKorea)}>Update</button>
+			<h2>좋아하는 날씨가 무엇인가요?</h2>
+			<input
+				type='text'
+				value={Weather}
+				onChange={(e) => setWeather(e.target.value)}
+			/>
 		</header>
 	);
 }

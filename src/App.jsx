@@ -48,6 +48,7 @@ export default function App() {
 							borderColor: `${colors[index]}`,
 							color: `${colors[index]}`,
 						}}
+						key={el + index}
 					>
 						<span
 							style={{

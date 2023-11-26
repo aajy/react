@@ -2,6 +2,7 @@ import { useContext, useMemo, useEffect, useState } from 'react';
 import { AgeContext } from './AgeContext';
 import { NameContext } from './NameContext';
 import { useRef } from 'react';
+import './Header.scss';
 
 export default function Header() {
 	const age = useContext(AgeContext);
@@ -39,7 +40,6 @@ export default function Header() {
 				value={number}
 				onChange={(e) => setNumber(e.target.value)}
 			/>
-			<hr />
 			<h2>어느 나라에 있어요?</h2>
 			<p>나라: {location.country}</p>
 			<button onClick={() => setIsKorea(!isKorea)}>Update</button>
@@ -49,7 +49,7 @@ export default function Header() {
 				value={Weather}
 				onChange={(e) => setWeather(e.target.value)}
 			/>
-			<h2>좋아하는 색이이 무엇인가요?</h2>
+			<h2>좋아하는 색이 무엇인가요?</h2>
 			<input type='text' ref={color} />
 			<button onClick={checkColor}>color확인</button>
 			<button onClick={reset}>리셋</button>

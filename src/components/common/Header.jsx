@@ -19,6 +19,9 @@ export default function Header() {
 	const checkColor = () => {
 		console.log('color', color.current.value);
 	};
+	const reset = () => {
+		color.current.focus();
+	};
 
 	useEffect(() => {
 		console.log('useEffect... 호출');
@@ -49,6 +52,7 @@ export default function Header() {
 			<h2>좋아하는 색이이 무엇인가요?</h2>
 			<input type='text' ref={color} />
 			<button onClick={checkColor}>color확인</button>
+			<button onClick={reset}>리셋</button>
 		</header>
 	);
 }
